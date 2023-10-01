@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>策略游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="playerCount">请输入玩家人数:</label>
+            <input type="number" id="playerCount" min="2">
+            <button id="showCountrySetup">显示设置</button>
+        </div>
+        <div id="countrySetup" hidden>
+            <h2>为国家设置初始资金、兵和工资</h2>
+            <!-- 这里是一个示例，您可以根据玩家数量复制和调整 -->
+            <div class="countryChoice">
+                <h3>国家 1:</h3>
+                <label>初始资金:</label>
+                <input type="number" class="initialMoney">
+                <label>初始兵:</label>
+                <input type="number" class="initialTroops">
+                <label>初始工资:</label>
+                <input type="number" class="initialWage">
+            </div>
+            <!-- 结束示例 -->
+            <button id="startGame">开始游戏</button>
+        </div>
+        <div id="gameArea" hidden>
+            <h2>现在是 <span id="currentPlayer">1</span> 号玩家的回合</h2>
+            <div>
+                <label for="action">选择一个行动:</label>
+                <select id="action">
+                    <option value="develop">发展国家 (花费10块增加1块工资)</option>
+                    <option value="sendMoney">送钱给其他国家</option>
+                </select>
+            </div>
+            <div id="sendMoneyOptions" hidden>
+                <label for="recipient">选择一个国家:</label>
+                <select id="recipient"></select>
+                <label for="amount">金额:</label>
+                <input type="number" id="amount">
+            </div>
+            <button id="executeAction">执行</button>
+            <button id="continueToNextPlayer">继续</button>
+            <h3>国家资金情况:</h3>
+            <ul id="countryList"></ul>
+        </div>
+    </div>
+</body>
+</html>
